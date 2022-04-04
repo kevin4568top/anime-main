@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="clock"></div>
+    <button type="button" id="btn">停止線上時鐘</button>
+
+
+    <script>
+        window.addEventListener('load', function(){
+            var timer = window.setInterval(function(){
+                /*每隔一秒更新一次時間*/
+                var clock = document.getElementById('clock');
+                clock.textContent = (new Date()).toLocaleString();
+            }, 1000);
+
+            var btn = document.getElementById('btn');
+        btn.addEventListener('click', function(){
+            /*按下停止，會清除計時器*/
+            window.clearInterval(timer);
+        }, false);
+        }, false);
+
+
+
+    </script>
+</body>
+</html>
